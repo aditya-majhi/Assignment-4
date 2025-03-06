@@ -28,12 +28,16 @@ function JobApplication() {
       const token = localStorage.getItem("token");
       console.log({ formData });
 
-      await axios.post("http://localhost:8000/application", formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.post(
+        "https://assignment-4-flff.onrender.com/application",
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       alert("Application submitted successfully!");
       navigate("/dashboard");
     } catch (error) {

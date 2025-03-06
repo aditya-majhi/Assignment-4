@@ -10,7 +10,7 @@ function JobListings() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/getjobs")
+      .get("https://assignment-4-flff.onrender.com/getjobs")
       .then((res) => setJobs(res.data))
       .catch((err) => console.error(err));
   }, []);

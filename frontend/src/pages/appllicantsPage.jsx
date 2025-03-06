@@ -11,7 +11,7 @@ const AppllicantsPage = () => {
   useEffect(() => {
     console.log({ id });
     axios
-      .get(`http://localhost:8000/jobs/${id}/applicants`, {
+      .get(`https://assignment-4-flff.onrender.com/jobs/${id}/applicants`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setApplicants(res.data))

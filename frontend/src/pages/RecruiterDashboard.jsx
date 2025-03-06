@@ -11,7 +11,7 @@ const RecruiterDashboard = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:8000/jobs/recruiter", {
+      .get("https://assignment-4-flff.onrender.com/jobs/recruiter", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -25,13 +25,13 @@ const RecruiterDashboard = () => {
   const handleDeleteJob = (jobId) => {
     const token = localStorage.getItem("token");
     axios
-      .delete(`http://localhost:8000/jobs/${jobId}`, {
+      .delete(`https://assignment-4-flff.onrender.com/jobs/${jobId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {
         setJobs((prevJobs) => prevJobs.filter((job) => job._id !== jobId));
         axios
-          .get("http://localhost:8000/jobs/recruiter", {
+          .get("https://assignment-4-flff.onrender.com/jobs/recruiter", {
             headers: { Authorization: `Bearer ${token}` },
           })
           .then((res) => {
@@ -137,7 +137,7 @@ const EditJobModal = ({ job, onCancel }) => {
     const token = localStorage.getItem("token");
     try {
       await axios.patch(
-        `http://localhost:8000/jobs/${job._id}`,
+        `https://assignment-4-flff.onrender.com/jobs/${job._id}`,
         { title, description, status, salary },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -145,7 +145,7 @@ const EditJobModal = ({ job, onCancel }) => {
       onCancel();
 
       axios
-        .get("http://localhost:8000/jobs/recruiter", {
+        .get("https://assignment-4-flff.onrender.com/jobs/recruiter", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => {

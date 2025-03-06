@@ -11,10 +11,13 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8000/auth/login", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://assignment-4-flff.onrender.com/auth/login",
+        {
+          email,
+          password,
+        }
+      );
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", res.data.role);
       alert("Logged in successfully!");

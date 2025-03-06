@@ -8,7 +8,7 @@ function RecruiterDashboard() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:8000/applications/candidate", {
+      .get("https://assignment-4-flff.onrender.com/applications/candidate", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setApplications(res.data))

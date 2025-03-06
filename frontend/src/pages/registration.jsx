@@ -14,11 +14,14 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8000/auth/register", {
-        email,
-        password,
-        role,
-      });
+      const response = await axios.post(
+        "https://assignment-4-flff.onrender.com/auth/register",
+        {
+          email,
+          password,
+          role,
+        }
+      );
       console.log(response.data);
       alert("Registration successful! You can now log in.");
       navigate("/login");

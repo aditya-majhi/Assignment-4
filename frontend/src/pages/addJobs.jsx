@@ -15,7 +15,7 @@ function AddJob() {
     const token = localStorage.getItem("token");
     try {
       await axios.post(
-        "http://localhost:8000/jobs",
+        "https://assignment-4-flff.onrender.com/jobs",
         { title, description, status: "open", company, salary },
         { headers: { Authorization: `Bearer ${token}` } }
       );
