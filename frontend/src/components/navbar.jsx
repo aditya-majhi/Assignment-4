@@ -33,7 +33,8 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  return (
+  return location.pathname === "/" ||
+    location.pathname === "/register" ? null : (
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
@@ -64,7 +65,8 @@ const Navbar = () => {
                         : item.path
                     }
                     className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                      location.pathname === item.path
+                      location.pathname === item.path ||
+                      location.pathname === item.path2
                         ? "text-blue-600"
                         : "text-gray-700 hover:text-blue-600"
                     }`}

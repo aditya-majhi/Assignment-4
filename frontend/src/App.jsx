@@ -1,5 +1,5 @@
 // App.js
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/logIn";
@@ -16,10 +16,7 @@ function App() {
   return (
     <Router>
       <div>
-        {window.location.pathname === "/" ||
-        window.location.pathname === "register" ? null : (
-          <Navbar />
-        )}
+        <Navbar />
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/jobs" element={<JobListings />} />

@@ -52,7 +52,7 @@ const RecruiterDashboard = () => {
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="container mx-auto">
         <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">
-          Recruiter Job Management Dashboard
+          Recruiter Dashboard
         </h1>
 
         {/* Job List */}
@@ -92,7 +92,7 @@ const RecruiterDashboard = () => {
                       <td className="p-3 flex justify-center space-x-2">
                         <button
                           onClick={() => navigate(`/applicants/${job._id}`)}
-                          className="text-blue-600 hover:text-blue-800 transition-colors"
+                          className="text-green-600 hover:text-green-800 transition-colors"
                         >
                           Applicants
                         </button>
