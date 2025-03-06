@@ -13,21 +13,13 @@ import RecruiterDashboard from "./pages/RecruiterDashboard";
 import AppllicantsPage from "./pages/appllicantsPage";
 
 function App() {
-  const [page, setPage] = useState("");
-
-  const location = window.location.pathname;
-
-  useEffect(() => {
-    const page = window.location.pathname;
-    console.log({ page });
-
-    setPage(page);
-  }, [location]);
-
   return (
     <Router>
       <div>
-        {page === "/" || page === "register" ? null : <Navbar />}
+        {window.location.pathname === "/" ||
+        window.location.pathname === "register" ? null : (
+          <Navbar />
+        )}
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/jobs" element={<JobListings />} />
